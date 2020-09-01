@@ -1,13 +1,14 @@
 //modelo
 
 export class Coin {
+  id:string
   name:string
-  price:number
+  current_price:number
   symbol:string
-  marketcap:number
-  volume:number
+  market_cap:number
+  total_volume:number
   image:string
-  priceChange:number
+  price_change_percentage_24h:number
 }
 
 

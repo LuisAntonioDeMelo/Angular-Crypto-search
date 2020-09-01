@@ -16,10 +16,15 @@ export class AppComponent {
       .subscribe(coins => this.coins = coins)
   }
 
+  filtrarCoins(busca):void {
+    let filtrados =  this.coins.filter( coin =>
+        coin.name.toLowerCase().includes(busca.toLowerCase()))
+    this.coins = filtrados
 
-  public filtrarCoins(busca:string):void {
-    this.coins.filter( coin =>
-        coin.name.toLowerCase().includes(busca.toLowerCase()) )
+    if(busca === ""){
+      this.coinService.obterCoins()
+      .subscribe(coins => this.coins = coins)
+    }
   }
 
 }

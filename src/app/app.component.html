@@ -1,10 +1,14 @@
 <div class="coin-app">
   <div class="coin-search">
-    <h1 class="coin-text">Busca sua CryptoMoeda 🔍</h1>
-    <form >
-      <input type="text" #nome name="" (change)="filtrarCoins(nome)" id="" class="coin-input">
+    <h1 class="coin-text">
+     🔍
+      Busque sua CryptoMoeda
+    </h1>
+    <form>
+      <input type="text" value="" placeholder="Search" (keyup)="filtrarCoins($event.target.value)" id=""
+        class="coin-input">
     </form>
   </div>
 </div>
 
-<app-coin  *ngFor="let coin of coins" [coin]="coin" ></app-coin>
+<app-coin *ngFor="let coin of coins" [coin]="coin"></app-coin>
