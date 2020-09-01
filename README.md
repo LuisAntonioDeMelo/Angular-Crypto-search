@@ -1,6 +1,6 @@
 ## angular/crypto -b
 
-base on tutorial  
+baseado no tutorial ... 
 React API Project - Cryptocurrency Finance Price Tracker App Using Hooks and Axios
 https://www.youtube.com/watch?v=9ohK7CapmIs
 <img src="src\assets\demostracao.gif">
