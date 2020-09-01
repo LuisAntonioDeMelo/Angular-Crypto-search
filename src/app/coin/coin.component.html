@@ -1,0 +1,22 @@
+<div class="coin-container">
+  <div class="coin-row">
+    <div class="coin">
+      <img src="coin.image" alt="crypto" srcset="">
+      <h1>{{coin.name}}</h1>
+      <p class="coin-symbol">{{coin.symbol}}</p>
+    </div>
+    <div class="coin-data">
+      <p class="coin-price">{{coin.price}}</p>
+      <p class="coin-volume">{{coin.volume}}</p>
+      <p class="coin-percent-red" *ngIf="coin.priceChange < 0" >
+        {{coin.priceChange.toFixed(2)}}
+      </p>
+      <p class="coin-percent green">
+        {{coin.priceChange.toFixed(2)}}
+      </p>
+      <p class="coin-marketcap">
+        Mtk Cap: {{coin.marketcap.toLocaleString()}}
+      </p>
+    </div>
+  </div>
+</div>

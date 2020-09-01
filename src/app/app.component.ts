@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Coin } from './model/coin.model';
+import { CoinService } from './coin.service'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'crypto-busca';
+
+  coins: Coin[]
+
+  constructor(private coinService:CoinService){
+    this.coinService.obterCoins()
+      .subscribe(coins => this.coins = coins)
+  }
+
+
+  public filtrarCoins(busca:string):void {
+    this.coins.filter( coin =>
+        coin.name.toLowerCase().includes(busca.toLowerCase()) )
+  }
+
 }
